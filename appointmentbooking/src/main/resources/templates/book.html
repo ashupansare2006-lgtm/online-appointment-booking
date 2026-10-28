@@ -1,0 +1,119 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f2f6fc;
+            color: #243247;
+        }
+
+        nav {
+            background: #123b70;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 12px;
+        }
+
+        .container {
+            max-width: 550px;
+            margin: 40px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 18px #dce3ee;
+        }
+
+        h1 {
+            text-align: center;
+            color: #123b70;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 11px;
+            margin-top: 7px;
+            border: 1px solid #ccd5e0;
+            border-radius: 6px;
+            font-size: 15px;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 22px;
+            padding: 13px;
+            background: #1769aa;
+            color: white;
+            border: none;
+            border-radius: 7px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #0d4c83;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="/">Home</a>
+        <a href="/book">Book Appointment</a>
+        <a href="/manage">Manage Appointments</a>
+        <a href="/admin">Admin Dashboard</a>
+    </nav>
+
+    <div class="container">
+        <h1>Book an Appointment</h1>
+
+        <form action="/book" method="post">
+            <label>Full Name</label>
+            <input type="text" name="name" placeholder="Enter your full name" required>
+
+            <label>Email Address</label>
+            <input type="email" name="email" placeholder="Enter your email" required>
+
+            <label>Phone Number</label>
+            <input type="tel" name="phone" placeholder="Enter phone number" required>
+
+            <label>Appointment Type</label>
+            <select name="type" required>
+                <option value="">Select appointment type</option>
+                <option>Doctor Consultation</option>
+                <option>Academic Counselling</option>
+                <option>General Consultation</option>
+                <option>Other</option>
+            </select>
+
+            <label>Appointment Date</label>
+            <input type="date" name="date" required>
+
+            <label>Appointment Time</label>
+            <input type="time" name="time" required>
+
+            <label>Additional Message</label>
+            <textarea name="message" rows="3" placeholder="Enter any additional details"></textarea>
+
+            <button type="submit">Submit Appointment</button>
+        </form>
+    </div>
+
+</body>
+</html>

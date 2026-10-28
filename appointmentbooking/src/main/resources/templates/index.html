@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Appointment Booking System</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f2f6fc;
+            color: #243247;
+        }
+
+        nav {
+            background: #123b70;
+            padding: 18px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        nav h2 {
+            color: white;
+            margin: 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 18px;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #9ed7ff;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+            background: linear-gradient(135deg, #dcecff, #ffffff);
+        }
+
+        .hero h1 {
+            font-size: 38px;
+            color: #123b70;
+        }
+
+        .hero p {
+            font-size: 17px;
+            color: #566579;
+            line-height: 1.7;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #1769aa;
+            color: white;
+            padding: 13px 23px;
+            border-radius: 7px;
+            text-decoration: none;
+            margin: 10px 5px;
+        }
+
+        .btn:hover {
+            background: #0d4c83;
+        }
+
+        .features {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 35px 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            width: 250px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 15px #dce3ee;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #66758a;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <h2>AppointmentCare</h2>
+        <div>
+            <a href="/">Home</a>
+            <a href="/book">Book Appointment</a>
+            <a href="/manage">Manage Appointments</a>
+            <a href="/admin">Admin Dashboard</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <h1>Online Appointment Booking System</h1>
+        <p>Book and manage your appointments easily from one place.</p>
+        <a class="btn" href="/book">Book an Appointment</a>
+        <a class="btn" href="/manage">Manage Appointments</a>
+    </section>
+
+    <section class="features">
+        <div class="card">
+            <h3>📅 Easy Booking</h3>
+            <p>Choose your preferred date and time.</p>
+        </div>
+
+        <div class="card">
+            <h3>📋 Manage Appointments</h3>
+            <p>View your appointment details.</p>
+        </div>
+
+        <div class="card">
+            <h3>⚙️ Admin Dashboard</h3>
+            <p>Manage appointment records.</p>
+        </div>
+    </section>
+
+    <footer>
+        Online Appointment Booking System | Academic Mini Project
+    </footer>
+
+</body>
+</html>

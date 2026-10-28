@@ -1,0 +1,189 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Appointments</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f2f6fc;
+            color: #243247;
+        }
+
+        nav {
+            background: #123b70;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 12px;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #9ed7ff;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 30px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 18px #dce3ee;
+        }
+
+        h1 {
+            color: #123b70;
+        }
+
+        .info {
+            padding: 15px;
+            background: #e4f1ff;
+            border-radius: 8px;
+            line-height: 1.6;
+        }
+
+        .success {
+            padding: 14px;
+            background: #d9f8e4;
+            color: #176b39;
+            border-radius: 7px;
+            margin: 15px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 20px;
+            background: #1769aa;
+            color: white;
+            text-decoration: none;
+            border-radius: 7px;
+        }
+
+        .btn:hover {
+            background: #0d4c83;
+        }
+
+        table {
+            width: 100%;
+            margin-top: 25px;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 13px;
+            border: 1px solid #dce3ee;
+            text-align: left;
+        }
+
+        th {
+            background: #e4f1ff;
+            color: #123b70;
+        }
+
+        tbody tr:nth-child(even) {
+            background: #f8faff;
+        }
+
+        .empty {
+            text-align: center;
+            color: #66758a;
+            padding: 20px;
+        }
+
+        @media (max-width: 700px) {
+            nav a {
+                display: inline-block;
+                margin: 7px;
+            }
+
+            .container {
+                margin: 20px 10px;
+                padding: 15px;
+                overflow-x: auto;
+            }
+
+            table {
+                min-width: 600px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <a href="/">Home</a>
+        <a href="/book">Book Appointment</a>
+        <a href="/manage">Manage Appointments</a>
+        <a href="/admin">Admin Dashboard</a>
+    </nav>
+
+    <div class="container">
+
+        <h1>Manage Appointments</h1>
+
+        <p class="success"
+           th:if="${successMessage}"
+           th:text="${successMessage}">
+            Appointment booked successfully!
+        </p>
+
+        <p class="info">
+            View your submitted appointment details below.
+            You can book a new appointment using the button.
+        </p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Appointment Type</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr th:if="${#lists.isEmpty(appointments)}">
+                    <td colspan="5" class="empty">
+                        No appointments to display yet.
+                    </td>
+                </tr>
+
+                <tr th:each="appointment : ${appointments}">
+                    <td th:text="${appointment['name']}">Name</td>
+                    <td th:text="${appointment['type']}">Type</td>
+                    <td th:text="${appointment['date']}">Date</td>
+                    <td th:text="${appointment['time']}">Time</td>
+                    <td th:text="${appointment['status']}">Pending</td>
+                </tr>
+
+            </tbody>
+        </table>
+
+        <a class="btn" href="/book">+ Book New Appointment</a>
+
+        <a class="btn" href="/" style="background:#64748b;">
+            Back to Home
+        </a>
+
+    </div>
+
+</body>
+</html>
